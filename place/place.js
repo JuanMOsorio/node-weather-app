@@ -12,9 +12,9 @@ const getPlaceLatLng = async address => {
   const { formatted_address, geometry } = response.data.results[0];
   const { lat, lng } = geometry.location;
 
-  console.log(JSON.stringify(formatted_address, undefined, 2));
-  console.log(`Latitude: ${ lat }`);
-  console.log(`Longitude: ${ lng }`);
+  // console.log(JSON.stringify(formatted_address, undefined, 2));
+  // console.log(`Latitude: ${ lat }`);
+  // console.log(`Longitude: ${ lng }`);
 
   return {
     address: formatted_address,

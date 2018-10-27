@@ -1,4 +1,5 @@
 const { getPlaceLatLng } = require('./place/place');
+const { getWeather } = require('./weather/weather');
 
 const { argv } = require('yargs').options({
   address: {
@@ -11,5 +12,7 @@ const { argv } = require('yargs').options({
 console.log(argv.address);
 
 getPlaceLatLng(argv.address)
-  .then(response => response)
+  .then(({ lat, lng }) => {
+    getWeather(lat, lng).then(e => console.log(e));
+  })
   .catch(error => console.error(error));
